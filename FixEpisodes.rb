@@ -7,7 +7,7 @@ path = gets.chomp(" \n") + "/"
 show = File.basename(path).delete "\\"                   #Delete the backlashes that generate with spaces
 total_seasons = 0                                        #Variable to store total seasons(Only used for final output)
 total_episodes = 0                                       #Variable to store total episodes(Only used for final output)
-name = []                                                #Array to store the name to be traversed at the rename phase
+name = []                                                #Array to store the new name to be added at the rename phase
 
 Dir.glob(path + "*") do |f|                              #Get the files and folders inside path and traverse one by one
   if File.directory?(f) && f.include?("Season")
