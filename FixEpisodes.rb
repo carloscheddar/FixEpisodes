@@ -1,7 +1,6 @@
 #! /bin/env/ruby
 #Author: Carlos Feliciano Barba
 
-
 print "Drag the show folder to the terminal window: "
 path = gets.chomp(" \n") + "/"
 
@@ -9,6 +8,7 @@ show = File.basename(path).delete "\\"
 seasons = 0
 total_episodes = 0
 name = []
+
 Dir.glob(path + "*") do |f|
   if File.directory?(f) && f.include?("Season")
     seasons+=1
@@ -42,7 +42,7 @@ Dir.glob(path + "*") do |f|
         File.rename(e, name[i])
       end
     else
-      puts "Organize your files as the instructions stated"
+      abort("Organize your files as the instructions stated")
     end
   end
   puts "Finished renaming Season #{seasons}"
