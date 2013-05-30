@@ -12,16 +12,16 @@ name = []
 Dir.glob(path + "*") do |f|
   if File.directory?(f) && f.include?("Season")
     seasons+=1
-    
-    episodes = Dir.glob(path + "Season\ #{seasons}/*")
+    season = f[-1]
+    episodes = Dir.glob(path + "Season\ #{season}/*")
 
     episodes.each_with_index do |e, i|
-      name[i] = "#{path}Season\ #{seasons}/#{show} - ".delete "\\"
+      name[i] = "#{path}Season\ #{season}/#{show} - ".delete "\\"
       
-      if seasons < 10
-        name[i] += "s0#{seasons}" 
+      if season < 10
+        name[i] += "s0#{season}" 
       else
-        name[i] += "s#{seasons}"
+        name[i] += "s#{season}"
       end
       
       if i+1 < 10
@@ -45,7 +45,7 @@ Dir.glob(path + "*") do |f|
       abort("Organize your files as the instructions stated")
     end
   end
-  puts "Finished renaming Season #{seasons}"
+  puts "Finished renaming Season #{season}"
 end
 
 puts "#{show} has #{seasons} seasons with #{total_episodes} episodes in total."
