@@ -2,7 +2,7 @@
 This script will rename your TV episodes to this format: ShowName - s01e02.
 
 ### Purpose
-I made this with the purpose of organizing my TV shows to be completely recognizable by PLEX.
+I made this with the purpose of organizing my TV shows to be completely recognizable by PLEX so it can download the correct metadata.
 
 ### Format
 ```
