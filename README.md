@@ -62,5 +62,5 @@ Adventure Time has 1 seasons with 5 episodes in total.
 ### Bug reports
 If you experience any issues please report them and I will take care of it as soon as possible.
 
-### Pulls
-Feel free to pull and improve the code.
+### Forks
+Feel free to fork and improve the code.
