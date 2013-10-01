@@ -13,14 +13,14 @@ Dir.glob(path + "*") do |f|                              #Get the files and fold
   if File.directory?(f) && f.include?("Season")
     total_seasons+=1
     season = f[-1]                                       #Get Season number from the folder name
-    
-    episodes = Dir.glob(path + "Season\ #{season}/*")    #Store episodes in array to use later
+
+    episodes = Dir.glob(path + "Season\ #{season}/*").sort    #Store episodes in array to use later
 
     episodes.each_with_index do |e, i|
       name[i] = "#{path}Season\ #{season}/#{show} - s".delete "\\"
-      
+
       name[i] += "0" if season.to_i < 10
-      
+
       name[i] += "#{season}e"
 
       name[i] += "0" if i+1 < 10
@@ -28,7 +28,7 @@ Dir.glob(path + "*") do |f|                              #Get the files and fold
       name[i] += "#{i+1}#{File.extname(e)}"
 
       puts "#{e} will be #{name[i]}"
-      
+
       total_episodes+=1
     end
 
