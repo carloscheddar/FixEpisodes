@@ -12,7 +12,7 @@ name = []                                                #Array to store the new
 Dir.glob(path + "*") do |f|                              #Get the files and folders inside path and traverse one by one
   if File.directory?(f) && f.include?("Season")
     total_seasons+=1
-    season = f[-1]                                       #Get Season number from the folder name
+    season = f.split('/')[-1].split(' ')[-1]                           #Get Season number from the folder name
 
     episodes = Dir.glob(path + "Season\ #{season}/*").sort    #Store episodes in array to use later
 
