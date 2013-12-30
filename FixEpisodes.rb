@@ -19,7 +19,7 @@ Dir.glob(path + "*") do |f|                              #Get the files and fold
     episodes.each_with_index do |e, i|
       name[i] = "#{path}Season\ #{season}/#{show} - s".delete "\\"
 
-      name[i] += "0" if season.to_i < 10
+      name[i] += "0" if season.size < 2
 
       name[i] += "#{season}e"
 
